@@ -89,19 +89,17 @@ strong{
     font-weight: 600;
     text-align:bottom;
 }
-/* .carousel-wrapper {
+.carousel-wrapper {
     display: flex;
     justify-content: center;
     margin-bottom: 15px;
 
 }
 
-#projects-carousel, #stack-carousel {
-    width: 75%;
+ #projects-carousel, #stack-carousel {
+    width: 50%;
 }
-#projects-carousel img, #stack-carousel img {
-    height: 500px;
-} */
+
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
     height: 50px;
