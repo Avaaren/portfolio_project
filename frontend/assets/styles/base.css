@@ -23,14 +23,14 @@ h2:after {
     background-color: #1b1a1a;
 }
 
-.about-project h2, .about-me h2 {
+.about-project h2, .about-me h2, .my-projects h2 {
     text-align: center;
     font-weight: 350;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.about-project p, .about-me p {
+.about-project p, .about-me p, .my-projects p {
     text-align: center;
     font-weight: 350;
     margin-top: 15px;
@@ -67,7 +67,7 @@ strong{
     border: 1px solid;
 }
 
-.about-me h3 {
+.about-me h3, .my-projects h3 {
     text-align: center;
     font-weight: 350;
     margin-bottom: 20px;
@@ -82,4 +82,23 @@ strong{
 .about-me .distanation-ul {
     list-style-type: none;
     text-align: left;
+}
+
+.carousel-caption {
+    color: #ffffff;
+    font-weight: 600;
+    text-align:bottom;
+}
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+}
+#projects-carousel {
+    width: 60%;
+    height: 50%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 50px;
+    width: 50px;
 }
