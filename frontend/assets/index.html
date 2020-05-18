@@ -12,15 +12,16 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
+        <!-- Navbar logo -->
         <a href="#" class="navbar-brand">
             <img src="img/shiba-inu.jpg" alt="logo" width="50" height="50">
         </a>
+        <!-- Collapsed navbar button -->
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsedNavbar"
             aria-expanded="false" aria-label="ToggleNavigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <!-- Collapsing Navbar -->
         <div class="collapse navbar-collapse" id='collapsedNavbar'>
             <div class="navbar-nav d-flex justify-content-around" id='flexed-navbar-container'>
 
@@ -52,6 +53,63 @@
         </div>
 
     </nav>
+
+    <div class="container-fluid p-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class='about-project'>
+                        <h2>О проекте</h2>
+
+                        <p>Данный проект - это сайт-портфолио. Его цель - отточить мастерство создания
+                            сайтов, а также продемонстрировать 
+                            мои навыки в веб-разработке потенциальному работодателю.</p>
+                        <p> Он создан на стеке
+                            Django/React и включает в себя себя следующие технологии:
+                            <ul>
+                                <li>
+                                    <span class='li-logo'>
+                                        <img src="img/icons/1024px-Bootstrap_logo.svg.png" alt="">
+                                    </span>
+                                    <strong>Bootstrap4</strong> - для придания адаптивности и более простой верстки</li>
+                                <li>
+                                    <span class='li-logo'>
+                                        <img src="img/icons/bs4 icon.png" alt="">
+                                    </span>
+                                    <strong>Python библиотека Bs4</strong> - для парсинга информации для последующего размещения на сайте</li>
+                                <li>
+                                    <span class='li-logo'>
+                                        <img src="img/icons/celery icon.png" alt="">
+                                    </span>
+                                    <strong>Python библиотека Celery</strong> - для создания переодических задач (в данном случае - парсинга)</li>
+                                <li>
+                                    <span class='li-logo'>
+                                        <img src="img/icons/django logo.jpg" alt="">
+                                    </span>
+                                    <strong>Django rest framework</strong> - для создания REST API и связи django и react</li>
+                                <li>
+                                    <span class='li-logo'>
+                                        <img src="img/icons/docker logo.png" alt="">
+                                    </span>
+                                    <strong>Docker</strong> - для контейнеризации проекта</li>
+                            </ul>
+                            </p>
+                        <p>
+                            Данный сайт полностью, до последней строчки кода разработан одним человеком. Для связи смотрите раздел "Обо мне"
+                        </p>
+                        <div class="slider-down">
+                            <span>
+                                <img src="https://img.icons8.com/carbon-copy/100/000000/chevron-down.png" alt="slider-down"/>
+                            </span>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
