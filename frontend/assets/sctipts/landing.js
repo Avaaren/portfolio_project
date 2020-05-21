@@ -19,5 +19,11 @@ $(document).ready(function(){
         else {
             $('.to-start-button').hide(200);
         }
-    })
+    });
+
+    $('.to-start-button').on('click', function(){
+        let nav = $('body').find('nav');
+        let destination = $(nav).offset().top;
+        $('body,html').animate({scrollTop: destination},500);
+    });
 });
