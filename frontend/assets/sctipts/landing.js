@@ -11,4 +11,13 @@ $(document).ready(function(){
        let destination = $(sibling).offset().top;
        $('body,html').animate({scrollTop: destination},500);
     });
+
+    $(window).on('scroll', function(){
+        if (window.scrollY > 300){
+            $('.to-start-button').show(200);
+        }
+        else {
+            $('.to-start-button').hide(200);
+        }
+    })
 });
