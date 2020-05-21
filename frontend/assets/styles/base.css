@@ -11,6 +11,13 @@
     padding: 0;
 }
 
+.to-start-button {
+    display: none;
+    position: sticky;
+    top: 0;
+    float: right;
+}
+
 h2:after {
     content:'    ';
     display: block;
