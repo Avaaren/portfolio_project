@@ -12,6 +12,7 @@
 }
 
 .to-start-button {
+    cursor: pointer;
     display: none;
     position: sticky;
     top: 0;
