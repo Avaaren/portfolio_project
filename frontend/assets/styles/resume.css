@@ -75,6 +75,7 @@ strong {
     text-decoration: none;
     font-weight: 350;
     color: #979797;
+    padding: 3px;
 }
 
 .filter li a:hover{
