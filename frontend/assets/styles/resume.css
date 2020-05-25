@@ -57,11 +57,12 @@ strong {
     text-align: left;
     font-weight: 350;
     list-style-type: none;
+    font-size: 22px;
 }
 .filter ul:after{
     content:'    ';
     display: block;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-right: auto;
     margin-left: auto;
     height: 1px;
@@ -82,6 +83,22 @@ strong {
     cursor: pointer;
 }
 
+.filter button{
+    background: none;
+    color: #4e4e4e;
+    padding: 10px 15px;
+    margin: 3px;
+    border: 1px solid;
+    border-radius:15px;
+    font-size: 16px;
+    font-weight:350px
+}
+
+.filter button:hover{
+    color: #272727;
+    border: 2px solid #272727;
+}
+
 .materals {
     text-align:center
 }
@@ -89,8 +106,14 @@ strong {
 .materals table{
     text-align:center;
     font-weight: 350;
-    font-size: 15px;
+    font-size: 17px;
 }
 .materals table th{
     text-align:left;
+}
+
+.materals td img{
+    width:25px;
+    cursor: pointer;
+
 }
