@@ -1,8 +1,11 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
-app = 'portfolio'
 
 urlpatterns = [
-    path('', views.MainView.as_view(), name='pass')
+    path('admin/', admin.site.urls),
+    path('github/', include('github.urls', namespace='github')),
+    path('', include('landing.urls', namespace='landing')),
+    path('projects/', include('projects.urls', namespace='projects')),
+    path('resume/', include('resume.urls', namespace='resume')),
 ]
