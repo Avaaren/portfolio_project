@@ -1,3 +1,19 @@
 from django.db import models
 
-# Create your models here.
+
+class Project(models.Model):
+    name = models.CharField('Название проекта', max_length=50)
+    description = models.TextField('Описание проекта', max_length=2000)
+    link = models.CharField('Ссылка на проект', max_length=100)
+
+    def __str__(self):
+        return f'Project {self.name}'
+
+
+class ProjectImage(models.Model):
+    image = models.ImageField('Скриншот проекта')
+    image_description = models.CharField('Описание скриншота', max_length=100)
+    project = models.ForeignKey('Project', related_name='image', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.pk} - for {self.project.name}'
