@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'resume.apps.ResumeConfig',
     # 3-rd party
+    'rest_framework',
 
 ]
 
