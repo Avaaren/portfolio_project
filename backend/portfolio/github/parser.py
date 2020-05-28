@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
-# from .models import Repository
+from .models import Repository
 
 BASE_URL = 'https://github.com'
 
@@ -21,7 +20,7 @@ def get_urls(nickname, check_type=None):
         soup = BeautifulSoup(html, 'html.parser')
 
         repositories_container = soup.find('div', id='user-repositories-list')
-        repositories = repositories_container.find.find('ul').find_all('li')
+        repositories = repositories_container.find('ul').find_all('li')
         repositories_links = [BASE_URL + rep.find('a').get('href') for rep in repositories]
         return repositories_links
 
@@ -35,27 +34,50 @@ def get_data(html):
     name = soup.find('h1').find('strong').find('a').get_text()
 
     link = BASE_URL + soup.find('h1').find('strong').find('a').get('href')
-
-    description = soup.find('span', itemprop='about').get_text().strip()
+    try:
+        description = soup.find('span', itemprop='about').get_text().strip()
+    except AttributeError:
+        description = ''
 
     number_of_commits = soup.find('li', class_="commits").find('span', class_="num text-emphasized").get_text().strip()
 
-    return (name, link, description, number_of_commits)
+    return [name, link, description, number_of_commits]
+
 
 def get_pinned_apps():
     nickname = 'Avaaren'
     check_type = 'Pinned'
+    data_list = []
+    url_list = get_urls(nickname, check_type)
+    
+    url_list = get_urls(nickname, check_type)
+    for url in url_list:
+        data = get_data(get_html(url))
+        data_list.append(data)
+    return data_list
+
+def get_all_repos():
+    nickname = 'Avaaren'
+    check_type = 'All'
+    data_list = []
 
     url_list = get_urls(nickname, check_type)
     for url in url_list:
         data = get_data(get_html(url))
-        print(data)
-        print('----------------')
+        data_list.append(data)
+    return data_list
 
-def get_all_repos():
-    pass
-
-def check_for_updates():
-    pass
-
-get_pinned_apps()
+def create():
+    objs = []
+    data = get_all_repos()
+    for d in data:
+        objs.append(
+            Repository(
+                name=d[0],
+                link=d[1],
+                description=d[2],
+                number_of_commits = d[3]
+            )
+        )
+    
+    Repository.objects.bulk_create(objs)
