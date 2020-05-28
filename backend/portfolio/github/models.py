@@ -7,5 +7,9 @@ class Repository(models.Model):
     description = models.TextField('Описание репозитория', max_length=2500, default='')
     number_of_commits = models.PositiveSmallIntegerField('Количество коммитов', default=0)
 
+    class Meta:
+        verbose_name = "Репозиторий"
+        verbose_name_plural = "Репозитории"
+
     def __str__(self):
         return f'Репозиторий - {self.name}'

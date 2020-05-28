@@ -20,11 +20,22 @@ class PassedMaterial(models.Model):
                                    on_delete=models.SET_DEFAULT,
                                    default=None)
     is_favorite = models.BooleanField('В избранном', default=False)
+    
+    class Meta:
+        verbose_name = "Материал"
+        verbose_name_plural = "Материалы"
 
     def __str__(self):
-        return '{self.name}'
+        return f'{self.name}'
 
 
 class Technology(models.Model):
     name = models.CharField('Название технологии', max_length=50)
     specialization = models.CharField('Направление', max_length=50)
+
+    class Meta:
+        verbose_name = "Технология"
+        verbose_name_plural = "Технологии"
+
+    def __str__(self):
+        return f'{self.name} for {self.specialization}'
