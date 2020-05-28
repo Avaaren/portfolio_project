@@ -15,7 +15,7 @@ class Project(models.Model):
 
 
 class ProjectImage(models.Model):
-    image = models.ImageField('Скриншот проекта')
+    image = models.ImageField('Скриншот проекта', upload_to='projects/')
     image_description = models.CharField('Описание скриншота', max_length=100)
     project = models.ForeignKey('Project', related_name='image', on_delete=models.CASCADE)
 
