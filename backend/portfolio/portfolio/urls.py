@@ -8,4 +8,6 @@ urlpatterns = [
     # path('', include('landing.urls', namespace='landing')),
     path('projects/', include('projects.urls', namespace='projects')),
     path('resume/', include('resume.urls', namespace='resume')),
+
+    path('api_auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
