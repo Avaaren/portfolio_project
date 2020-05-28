@@ -4,5 +4,5 @@ from . import views
 app_name = 'projects'
 
 urlpatterns = [
-    path('', views.MainView.as_view(), name='pass')
+    path('', views.ProjectListView.as_view())
 ]
