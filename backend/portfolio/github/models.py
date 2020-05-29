@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone, dateformat
 
 class Repository(models.Model):
     name = models.CharField('Название репозитория', max_length=50)
@@ -15,7 +15,7 @@ class Repository(models.Model):
         return f'Репозиторий - {self.name}'
 
 class Commits(models.Model):
-    date = models.DateField(auto_now_add=True)
+    date = models.DateTimeField(default=timezone.now())
     number_of_commits = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
