@@ -9,7 +9,7 @@ class TechnologySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PassedMaterialSerializer(serializers.ModelSerializer):
-
+    technology = TechnologySerializer(read_only=True)
     class Meta:
         model = PassedMaterial
         fields = '__all__'
