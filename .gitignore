@@ -86,4 +86,14 @@ local_settings.py
 .env
 db.sqlite3
 .vscode/
-predict/relationships.csv
+
+backend/portfolio/celerybeat-schedule
+backend/portfolio/github/__pycache__/admin.cpython-36.pyc
+backend/portfolio/github/__pycache__/models.cpython-36.pyc
+backend/portfolio/github/__pycache__/urls.cpython-36.pyc
+backend/portfolio/github/__pycache__/views.cpython-36.pyc
+backend/portfolio/portfolio/__pycache__/__init__.cpython-36.pyc
+backend/portfolio/portfolio/__pycache__/settings.cpython-36.pyc
+backend/portfolio/portfolio/__pycache__/urls.cpython-36.pyc
+backend/portfolio/projects/__pycache__/urls.cpython-36.pyc
+backend/portfolio/projects/__pycache__/views.cpython-36.pyc
