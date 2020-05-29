@@ -56,28 +56,16 @@ def get_pinned_apps():
         data_list.append(data)
     return data_list
 
-def get_all_repos():
+def get_total_commits():
     nickname = 'Avaaren'
     check_type = 'All'
     data_list = []
-
+    number_of_commits = 0
     url_list = get_urls(nickname, check_type)
     for url in url_list:
         data = get_data(get_html(url))
         data_list.append(data)
-    return data_list
 
-def create():
-    objs = []
-    data = get_all_repos()
-    for d in data:
-        objs.append(
-            Repository(
-                name=d[0],
-                link=d[1],
-                description=d[2],
-                number_of_commits = d[3]
-            )
-        )
-    
-    Repository.objects.bulk_create(objs)
+    for d in data_list:
+        number_of_commits+= int(d[-1])
+    return number_of_commits
