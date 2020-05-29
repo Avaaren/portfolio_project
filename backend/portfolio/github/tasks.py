@@ -1,7 +1,7 @@
 from celery import shared_task
 
-from .models import Repository
-from .parser import get_pinned_apps
+from .models import Repository, Commits
+from .parser import get_pinned_apps, get_total_commits
 
 
 @shared_task
@@ -34,4 +34,11 @@ def update_repos_table():
             description=dl_element[2],
             number_of_commits=dl_element[3]
         )
+
+@shared_task
+def update_number_of_commits():
+    number_of_commits = get_total_commits()
+    Commits.objects.create(
+        number_of_commits=number_of_commits
+    )
 
