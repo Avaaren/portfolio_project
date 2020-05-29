@@ -1,12 +1,14 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .serializers import PinnedAppsSerizalazer, PinnedApps
-from .parser import get_pinned_apps
+from .models import Repository
+from .serializers import PinnedAppsSerizalazer
+from .tasks import update_repos_table
 
 class PinnedAppView(APIView):
 
     def get(self, request):
-        obj = PinnedApps(get_pinned_apps())
-        serializer = PinnedAppsSerizalazer(obj)
+        s = update_repos_table.delay()
+        repositories = Repository.objects.all()
+        serializer = PinnedAppsSerizalazer(repositories, many=True)
         return Response(serializer.data)
