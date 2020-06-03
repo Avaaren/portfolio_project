@@ -3,14 +3,14 @@ from rest_framework import serializers
 from .models import Project, ProjectImage
 
 
-class ProjectImageSerializer(serializers.RelatedField):
+class ProjectImageSerializer(serializers.ModelSerializer):
     '''Image serializer for image field in Project'''
     class Meta:
         model = ProjectImage
-        exclude = ('project')
+        exclude = ('project',)
     # Method for representing image as field in ProjectSerializer
-    def to_representation(self, value):
-        return f'{value.image.url}'
+    # def to_representation(self, value):
+    #     return f'{value.image.url}'
 
 class ProjectSerializer(serializers.ModelSerializer):
     '''Project list'''
