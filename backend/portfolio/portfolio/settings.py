@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'resume.apps.ResumeConfig',
     # 3-rd party
     'rest_framework',
+    'corsheaders',
 
 ]
 
@@ -43,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -143,3 +145,10 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(hour='*/6'),
     }
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+'http://localhost:3000',
+)
