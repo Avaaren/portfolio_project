@@ -43,6 +43,7 @@ class ProjectComponent extends Component {
                 <div className="col-12">
                     <ProjectHeader name={project.name}/>
                     <CarouselWrapper project={project}/>
+                    <ProjectDescription description={project.description}/>
                 </div>
             </div>
         );
@@ -69,7 +70,14 @@ class CarouselWrapper extends Component {
 }
 
 class ProjectDescription extends Component {
+    render() {
 
+        return(
+            <div className="description">
+                <p>{this.props.description}</p>
+            </div>
+        );
+    }
 }
 
 // Carousel components
@@ -78,8 +86,8 @@ class Carousel extends Component {
     render (){
         const {project} = this.props;
         return (
-            <div className="caroudel slide" id={project.name} data-ride="carousel">
-                <CarouselIndicators dataTarget={project.name} images={project.images}/>
+            <div className="carousel slide" id={project.name} data-ride="carousel">
+                    <CarouselIndicators dataTarget={project.name} images={project.images}/>
                 <CarouselInner project={project}/>
             </div>
             
@@ -167,5 +175,7 @@ class CarouselNav extends Component{
         );
     }
 }
+
+
 export default ProjectsList;
 
