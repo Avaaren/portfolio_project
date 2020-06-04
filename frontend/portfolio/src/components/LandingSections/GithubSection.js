@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PortfolioService from '../../services/PortfolioService'
-import '../styles/base.css'
+import SliderDownComponent from '../SliderDownComponent'
 
 const githubService = new PortfolioService();
 
@@ -22,10 +22,11 @@ class GithubComponent extends Component {
 
     render(){
         return (
-            <div className="container">
+            <div className="container" id='my-git-link'>
                 <section className="my-git">
                     <GithubHeader />
                     <GithubAppsContainer repositoryList={this.state.repositoryList} />
+                    <SliderDownComponent />
                 </section>
             </div>
         );
