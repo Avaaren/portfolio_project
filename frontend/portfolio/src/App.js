@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ProjectsList from './components/ProjectsList'
+import GithubComponent from './components/GithubComponent'
 
 class App extends Component {
 
@@ -9,7 +10,8 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <ProjectsList />
+        {/* <ProjectsList /> */}
+        <GithubComponent />
       </div>
     )
   }
