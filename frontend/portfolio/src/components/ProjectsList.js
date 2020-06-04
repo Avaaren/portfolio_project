@@ -86,8 +86,8 @@ class Carousel extends Component {
     render (){
         const {project} = this.props;
         return (
-            <div className="carousel slide" id={project.name} data-ride="carousel">
-                    <CarouselIndicators dataTarget={project.name} images={project.images}/>
+            <div className="carousel slide" id={project.id} data-ride="carousel">
+                    <CarouselIndicators dataTarget={project.id} images={project.images}/>
                 <CarouselInner project={project}/>
             </div>
             
@@ -116,8 +116,8 @@ class CarouselInner extends Component {
         return(
             <div className="carousel-inner">
                 {carouselItemsList}
-                <CarouselNav direction="prev" projectName={project.name}/>
-                <CarouselNav direction="next" projectName={project.name}/>
+                <CarouselNav direction="prev" projectId={project.id}/>
+                <CarouselNav direction="next" projectId={project.id}/>
             </div>
         );
     }
@@ -164,10 +164,10 @@ class CarouselCaption extends Component {
 class CarouselNav extends Component{
 
     render() {
-        const {direction, projectName} = this.props;
+        const {direction, projectId} = this.props;
 
         return (
-            <a href={`#${projectName}`} className={`carousel-control-${direction} lool`} role="button"
+            <a href={`#${projectId}`} className={`carousel-control-${direction} lool`} role="button"
             data-slide={direction}>
                                     <span className={`carousel-control-${direction}-icon`} aria-hidden="true"></span>
                                     <span className="sr-only">{direction}</span>

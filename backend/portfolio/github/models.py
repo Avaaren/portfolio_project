@@ -15,7 +15,7 @@ class Repository(models.Model):
         return f'Репозиторий - {self.name}'
 
 class Commits(models.Model):
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(default=timezone.now)
     number_of_commits = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
