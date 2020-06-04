@@ -1,14 +1,19 @@
 import axios from 'axios';
 const API_URL = 'http://localhost:8000';
 
-export default class PortfolioService{
+export default class PortfolioService {
 
-    constructor(){}
+    constructor() { }
 
 
     getProjects() {
         const url = `${API_URL}/api/projects/`;
-        return axios.get(url).then(response => {console.log(response); return response.data});
+        return axios.get(url).then(response => { return response.data });
+    }
+
+    getRepositories() {
+        const url = `${API_URL}/api/github/`;
+        return axios.get(url).then(response => { console.log(response); return response.data });
     }
 
     // getCustomersByURL(link){
