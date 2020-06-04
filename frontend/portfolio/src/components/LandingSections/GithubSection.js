@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PortfolioService from '../services/PortfolioService'
+import PortfolioService from '../../services/PortfolioService'
 import '../styles/base.css'
 
 const githubService = new PortfolioService();
