@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#flexed-navbar-container {
+    width: 100%;
+}
+.p-0 {
+    padding: 0;
+}
+
+.to-start-button {
+    cursor: pointer;
+    display: none;
+    position: sticky;
+    top: 0;
+    float: right;
+}
+
+h2:after {
+    content:'    ';
+    display: block;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width:25%;
+    height: 3px;
+    font-weight: 300px;
+    background-color: #1b1a1a;
+}
+
+.about-project h2, .about-me h2, .my-projects h2, .my-stack h2, .my-git h2, .my-contacts h2 {
+    text-align: center;
+    font-weight: 350;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.about-project p, .about-me p, .my-projects p, .my-stack p, .my-contacts p {
+    text-align: center;
+    font-weight: 350;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.about-project li {
+    text-align: justify;
+    list-style-type: none;
+    font-weight: 350;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+span.li-logo img{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    border: 2px solid;
+    
+}
+.slider-down{
+    display:flex;
+    justify-content:center;
+}
+
+.slider-down img {
+    cursor: pointer;
+}
+
+strong{
+    font-weight: 400;
+}
+/* .row>div{
+    border: 1px solid;
+} */
+
+.about-me h3, .my-projects h3, .my-stack h3, .my-git h3, .my-contacts h3 {
+    text-align: center;
+    font-weight: 350;
+    margin-bottom: 20px;
+} 
+
+.my-git h4 {
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 20px;
+
+}
+#self-photo {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}   
+
+.about-me .distanation-ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.carousel-caption {
+    color: #ffffff;
+    font-weight: 600;
+    text-align:bottom;
+}
+.carousel-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+}
+
+#projects-carousel {
+    width: 60%;
+}
+
+#stack-carousel {
+    width: 75%;
+}
+
+#contacts-carousel {
+    width: 60%;
+    border-radius:50%;
+}
+#contacts-carousel img{
+    border-radius:50%;
+
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 50px;
+    width: 50px;
+}
+
+
+
+.git-item a{
+    text-decoration: none;
+}
+
+.my-git p {
+    text-align: justify;
+    font-weight: 350;
+}
+
+.repos-description {
+    min-height: 110px;;
+}
+
+p.number-of-commits {
+    text-align: center;
+}
