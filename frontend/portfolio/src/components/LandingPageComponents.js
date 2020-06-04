@@ -2,19 +2,30 @@ import React, { Component } from 'react';
 
 import '../styles/base.css'
 
-import {
-    AboutProjectSection,
-    AboutMeSection,
-    MyProjectsSection,
-    MyResumeSection,
-    GithubSection,
-    MyContactsSection,
 
-} from './LandingSections/'
+import AboutProjectSection from './LandingSections/AboutProjectSection'
+import AboutMeSection from './LandingSections/AboutMeSection'
+import MyProjectsSection from './LandingSections/MyProjectsSection'
+import MyResumeSection from './LandingSections/MyResumeSection'
+import GithubSection from './LandingSections/GithubSection'
+import MyContactsSection from './LandingSections/MyContactsSection'
 
 
-class LandingPage extends Component {
-
+export default class LandingPage extends Component {
+    render() {
+        return (
+            <div className="container-fluid p-0">
+                <Navbar />
+                <ToStartButton />
+                <AboutProjectSection />
+                <AboutMeSection />
+                <MyProjectsSection />
+                <GithubSection />
+                <MyResumeSection />
+                <MyContactsSection />
+            </div>
+        );
+    }
 }
 
 class Navbar extends Component {
@@ -66,21 +77,11 @@ class Navbar extends Component {
     }
 }
 
-class ContentWrapper extends Component {
-    render() {
-        return (
-            <div className="container-fluid p-0">
-                <ToStartButton />
-                
-            </div>
-        );
-    }
-}
 
 class ToStartButton extends Component {
     render() {
         return (
-            <div className="to-start-button" style="display: none;">
+            <div className="to-start-button" style={{display:'none'}} >
                 <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
             </div>
         );
