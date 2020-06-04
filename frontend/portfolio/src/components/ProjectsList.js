@@ -14,6 +14,8 @@ class ProjectsList extends Component {
     }
 
     componentDidMount() {
+        // Oh, it’s so obvious now. You’re calling this.setState inside of your callback to Api.get().
+        //  You need to cache the reference to this outside of that API call.
         var self = this;
         projectsService.getProjects().then(function (result) {
             self.setState({ projects: result })
