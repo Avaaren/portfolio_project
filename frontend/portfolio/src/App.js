@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LandingPageComponent from './components/LandingPageComponents.js'
+
 
 class App extends Component {
 
@@ -8,7 +10,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-
+        <LandingPageComponent />
       </div>
     )
   }
