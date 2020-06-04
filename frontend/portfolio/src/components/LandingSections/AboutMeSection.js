@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/base.css'
-import SliderDownComponent from './SliderDown'
+import SliderDownComponent from '../SliderDownComponent'
 
 export default class AboutMeSection extends Component {
     render() {
