@@ -34,7 +34,7 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 {/* navbar logo */}
                 <a href="#" className="navbar-brand">
-                    <img src="img/shiba-inu.jpg" alt="logo" width="50" height="50" />
+                    <img src={require("../img/shiba-inu.jpg")} alt="logo" width="50" height="50" />
                 </a>
                 {/* Collapsed navbar button */}
                 <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#collapsedNavbar" aria-expanded="false" aria-label="ToggleNavigation">

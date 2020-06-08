@@ -20,30 +20,30 @@ export default class AboutProjectSection extends Component {
                             <ul>
                                 <li>
                                     <span className="li-logo">
-                                        <img src="img/icons/1024px-Bootstrap_logo.svg.png" alt="" />
+                                        <img src={require("../../img/icons/1024px-Bootstrap_logo.svg.png")} alt="" />
                                     </span>
                                     <strong>Bootstrap4</strong> - для придания адаптивности и более простой верстки</li>
                                 <li>
                                     <span className="li-logo">
-                                        <img src="img/icons/bs4 icon.png" alt="" />
+                                        <img src={require("../../img/icons/bs4 icon.png")} alt="" />
                                     </span>
                                     <strong>Python библиотека Bs4</strong> - для парсинга информации для последующего
                                     размещения на сайте</li>
                                 <li>
                                     <span className="li-logo">
-                                        <img src="img/icons/celery icon.png" alt="" />
+                                        <img src={require("../../img/icons/celery icon.png")} alt="" />
                                     </span>
                                     <strong>Python библиотека Celery</strong> - для создания переодических задач (в
                                     данном случае - парсинга)</li>
                                 <li>
                                     <span className="li-logo">
-                                        <img src="img/icons/django logo.jpg" alt="" />
+                                        <img src={require("../../img/icons/django logo.jpg")} alt="" />
                                     </span>
                                     <strong>Django rest framework</strong> - для создания REST API и связи django и
                                     react</li>
                                 <li>
                                     <span className="li-logo">
-                                        <img src="img/icons/docker logo.png" alt="" />
+                                        <img src={require("../../img/icons/docker logo.png")} alt="" />
                                     </span>
                                     <strong>Docker</strong> - для контейнеризации проекта</li>
                             </ul>
