@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import '../styles/base.css'
 
@@ -12,11 +12,42 @@ import MyContactsSection from './LandingSections/MyContactsSection'
 
 
 export default class LandingPage extends Component {
+
+    constructor(props) {
+        super(props)
+        this.toStartRef = createRef()
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    // Show to start button when scrolling down
+    handleScroll = (event) => {
+        if (event.currentTarget.pageYOffset > 300){
+            this.toStartRef.current.style.display='block';
+        }
+        else{
+            this.toStartRef.current.style.display='none';
+        }
+    }
+
+    // Hadling click on to start button
+    onStartClick = (event) => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          })
+    }
+
     render() {
         return (
             <div className="container-fluid p-0">
                 <Navbar />
-                <ToStartButton />
+                <ToStartButton ref={this.toStartRef} onClick={this.onStartClick}/>
                 <AboutProjectSection />
                 <AboutMeSection />
                 <MyProjectsSection />
@@ -78,12 +109,19 @@ class Navbar extends Component {
 }
 
 
-class ToStartButton extends Component {
-    render() {
-        return (
-            <div className="to-start-button" style={{display:'none'}} >
-                <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
-            </div>
-        );
-    }
-}
+// class ToStartButton extends Component {
+//     render() {
+//         return (
+//             <div className="to-start-button" style={{display:'none'}} >
+//                 <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
+//             </div>
+//         );
+//     }
+// }
+
+const ToStartButton = React.forwardRef((props, ref) => (
+
+    <div ref={ref} onClick={props.onClick} className="to-start-button" style={{display:'none'}} >
+        {props.children}
+        <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
+    </div>));
