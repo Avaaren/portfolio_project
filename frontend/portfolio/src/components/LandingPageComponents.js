@@ -76,30 +76,16 @@ class Navbar extends Component {
                 <div className="collapse navbar-collapse" id="collapsedNavbar">
                     <div className="navbar-nav d-flex justify-content-around" id="flexed-navbar-container">
 
-                        <div className="nav-item">
-                            <a href="#about-project-link" className="nav-link">О проекте</a>
-                        </div>
+                        <NavbarItem id="about-project-link" name='О проекте' />
 
-                        <div className="nav-item">
-                            <a href="#about-me-link" className="nav-link">Обо мне</a>
-                        </div>
+                        <NavbarItem id="about-me-link" name='Обо мне' />
 
-                        <div className="nav-item">
-                            <a href="#my-projects-link" className="nav-link">Мои проекты</a>
-                        </div>
+                        <NavbarItem id="my-projects-link" name='Мои проекты' />
+                        <NavbarItem id="my-resume-link" name='Резюме' />
 
-                        <div className="nav-item">
-                            <a href="#my-resume-link" className="nav-link">Резюме</a>
-                        </div>
+                        <NavbarItem id="my-git-link" name='Гит' />
 
-                        <div className="nav-item">
-                            <a href="#my-git-link" className="nav-link">Гит</a>
-                        </div>
-
-                        <div className="nav-item">
-                            <a href="#my-contacts-link" className="nav-link">Контакты</a>
-                        </div>
-
+                        <NavbarItem id="my-contacts-link" name='Контакты' />
                     </div>
                 </div>
 
@@ -108,7 +94,26 @@ class Navbar extends Component {
     }
 }
 
+class NavbarItem extends Component {
 
+    onClick = (event) => {
+        event.preventDefault();
+        const id=event.currentTarget.href.split('#')[1];
+        window.scrollTo({
+            top: document.getElementById(id).offsetTop,
+            behavior: "smooth"
+       });
+    }
+
+    render() {
+        const {id, name} = this.props;
+        return(
+            <div className="nav-item">
+                <a href={`#${id}`} className="nav-link" onClick={this.onClick}>{name}</a>
+            </div>
+        );
+    }
+}
 // class ToStartButton extends Component {
 //     render() {
 //         return (
