@@ -13,7 +13,7 @@ export default class AboutMeSection extends Component {
                                 <h2 className="my-4">Обо мне</h2>
                                 <h3>Лучиц Денис Валерьевич</h3>
                                 <h3>18 лет</h3>
-                                <img src="img/shiba-inu.jpg" alt="My photo" className="mw-100" id="self-photo" />
+                                <img src={require("../../img/shiba-inu.jpg")} alt="My photo" className="mw-100" id="self-photo" />
                             </div>
 
                             <div className="distanation">
@@ -21,27 +21,27 @@ export default class AboutMeSection extends Component {
                                 <ul className="distanation-ul">
                                     <li>Страна: Беларусь
                                     <span className="li-logo">
-                                            <img src="img/icons/belarus logo.png" alt="Belarus flag" />
+                                            <img src={require("../../img/icons/belarus logo.png")} alt="Belarus flag" />
                                         </span>
 
                                     </li>
                                     <li>Город: Минск
                                     <span className="li-logo">
-                                            <img src="img/icons/minsk logo.png" alt="Minsk flag" />
+                                            <img src={require("../../img/icons/minsk logo.png")} alt="Minsk flag" />
                                         </span>
 
                                     </li>
                                     <li>Языки: Русский
                                     <span className="li-logo">
-                                            <img src="img/icons/russia-logo.jpg" alt="Russia flag" />
+                                            <img src={require("../../img/icons/russia-logo.jpg")} alt="Russia flag" />
                                         </span>,
                                     Белорусский
                                     <span className="li-logo">
-                                            <img src="img/icons/belarus logo.png" alt="Belarus flag" />
+                                            <img src={require("../../img/icons/belarus logo.png")} alt="Belarus flag" />
                                         </span>,
                                     Английский
                                     <span className="li-logo">
-                                            <img src="img/icons/english logo.png" alt="GB flag" />
+                                            <img src={require("../../img/icons/english logo.png")} alt="GB flag" />
                                         </span>
 
                                     </li>
