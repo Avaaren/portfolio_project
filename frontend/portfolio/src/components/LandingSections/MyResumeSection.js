@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SliderDownComponent from '../SliderDownComponent'
-import LandingCarousel2 from '../LandingCarousel2'
+import LandingCarousel from '../LandingCarousel'
 
 const image_path = [
     require("../../img/technologies/django.jpg"),
@@ -22,7 +22,7 @@ export default class MyResumeSection extends Component {
                     <h3>В данном разделе представлены технологии, которыми я владею</h3>
 
 
-                    <LandingCarousel2 image_path={image_path} html_id='stack-carousel'/>
+                    <LandingCarousel image_path={image_path} html_id='stack-carousel' projects={null}/>
                     <SliderDownComponent />
 
                 </section>
