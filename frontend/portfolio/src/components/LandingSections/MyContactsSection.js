@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SliderDownComponent from '../SliderDownComponent'
 import LandingCarousel2 from '../LandingCarousel2'
 
 const image_path = [
@@ -22,7 +21,6 @@ export default class MyResumeSection extends Component {
    
    
                        <LandingCarousel2 image_path={image_path} html_id='contacts-carousel'/>
-                       <SliderDownComponent />
    
                    </section>
                </div>
