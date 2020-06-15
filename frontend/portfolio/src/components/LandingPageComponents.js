@@ -16,6 +16,7 @@ export default class LandingPage extends Component {
     constructor(props) {
         super(props)
         this.toStartRef = createRef()
+        this.state = { isScroll: false };
     }
 
     componentDidMount() {
@@ -27,11 +28,11 @@ export default class LandingPage extends Component {
     }
     // Show to start button when scrolling down
     handleScroll = (event) => {
-        if (event.currentTarget.pageYOffset > 300){
-            this.toStartRef.current.style.display='block';
+        if (event.currentTarget.pageYOffset > 300) {
+            this.setState({ isScroll: true });
         }
-        else{
-            this.toStartRef.current.style.display='none';
+        else {
+            this.setState({ isScroll: false });
         }
     }
 
@@ -47,7 +48,7 @@ export default class LandingPage extends Component {
         return (
             <div className="container-fluid p-0">
                 <Navbar />
-                <ToStartButton ref={this.toStartRef} onClick={this.onStartClick}/>
+                <ToStartButton isScroll={this.state.isScroll} onClick={this.onStartClick}/>
                 <AboutProjectSection />
                 <AboutMeSection />
                 <MyProjectsSection />
@@ -95,7 +96,7 @@ class Navbar extends Component {
 }
 
 class NavbarItem extends Component {
-
+    // By click getting id of element to scroll from <a> tag
     onClick = (event) => {
         event.preventDefault();
         const id=event.currentTarget.href.split('#')[1];
@@ -114,19 +115,13 @@ class NavbarItem extends Component {
         );
     }
 }
-// class ToStartButton extends Component {
-//     render() {
-//         return (
-//             <div className="to-start-button" style={{display:'none'}} >
-//                 <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
-//             </div>
-//         );
-//     }
-// }
 
-const ToStartButton = React.forwardRef((props, ref) => (
-
-    <div ref={ref} onClick={props.onClick} className="to-start-button" style={{display:'none'}} >
-        {props.children}
-        <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
-    </div>));
+class ToStartButton extends Component {
+    render() {
+        return (
+            <div className="to-start-button" onClick={this.props.onClick} style={{ display: this.props.isScroll ? 'block' : 'none' }} >
+                <img src="https://img.icons8.com/wired/64/000000/circled-chevron-up.png" />
+            </div>
+        );
+    }
+}
