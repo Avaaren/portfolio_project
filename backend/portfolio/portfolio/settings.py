@@ -73,12 +73,12 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'portfolio',
-       'USER': 'avaaren',
-       'PASSWORD': os.environ.get('PORTFOLIO_DB_PASSWORD', None),
-       'HOST': '127.0.0.1',
-       'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'portfolioproject_db_1',
+        'PORT': 5432,
     }
 }
 
@@ -129,8 +129,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Celery
-CELERY_BROKER_URL = 'redis://localhost:6379'  
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'  
+CELERY_BROKER_URL = 'redis://redis:6379'  
+CELERY_RESULT_BACKEND = 'redis://redis:6379'  
 CELERY_ACCEPT_CONTENT = ['application/json']  
 CELERY_RESULT_SERIALIZER = 'json'  
 CELERY_TASK_SERIALIZER = 'json' 
@@ -142,7 +142,7 @@ CELERY_BEAT_SCHEDULE = {
     },
     'update_number_of_commits': {
         'task': 'github.tasks.update_number_of_commits',
-        'schedule': crontab(hour='*/6'),
+        'schedule': crontab(hour='*/2'),
     }
 }
 
