@@ -5,7 +5,8 @@ from .models import Repository
 BASE_URL = 'https://github.com'
 
 def get_urls(nickname, check_type=None):
-
+    '''Get pinned apps links if type is pinned
+    and get all repos links if type is all''' 
     if check_type == 'Pinned':
         html = requests.get(f'{BASE_URL}/{nickname}').text
         soup = BeautifulSoup(html, 'html.parser')
