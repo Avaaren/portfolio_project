@@ -76,12 +76,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'portfolioproject_db_1',
-        'PORT': 5432,
+        'HOST': 'portfolio_db', # set in docker-compose.yml
+        'PORT': 5432 # default postgres port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -138,17 +136,17 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_BEAT_SCHEDULE = {
     'update_repos_table': {
         'task': 'github.tasks.update_repos_table',
-        'schedule': crontab(minute=0, hour=0),
+        'schedule': crontab(minute='*/1'),
     },
     'update_number_of_commits': {
         'task': 'github.tasks.update_number_of_commits',
-        'schedule': crontab(hour='*/2'),
+        'schedule': crontab(minute='*/1'),
     }
 }
 
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-'http://localhost:3000',
-)
+# CORS_ORIGIN_WHITELIST = (
+# 'http://localhost:3000',
+# )
