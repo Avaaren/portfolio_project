@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import LandingCarousel from '../LandingCarousel'
+import LandingCarousel2 from '../LandingCarousel2'
 
 const image_path = [
-    require("../../img/social-icons/git.svg"),
-    require("../../img/social-icons/hh.png"),
-    require("../../img/social-icons/linkedin.png"),
-    require("../../img/social-icons/tg.png"),
-    require("../../img/social-icons/vk.png"),
+    "http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",
+    "http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",
+    "http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",
 ]
 
 export default class MyResumeSection extends Component {
@@ -20,7 +18,7 @@ export default class MyResumeSection extends Component {
                        <h3>Если вы долистали досюда и вы заинтересованы, то связаться можете по следующим контактам</h3>
    
    
-                       <LandingCarousel image_path={image_path} html_id='contacts-carousel'/>
+                       <LandingCarousel2 projects={null} image_path={image_path} html_id='contacts-carousel'/>
    
                    </section>
                </div>

@@ -8,7 +8,6 @@ export default class AboutMeSection extends Component {
                 <div className="row">
                     <div className="col-12">
                         <section className="about-me">
-
                             <div className="generic-info">
                                 <h2 className="my-4">Обо мне</h2>
                                 <h3>Лучиц Денис Валерьевич</h3>
