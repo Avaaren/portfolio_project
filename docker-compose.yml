@@ -4,10 +4,7 @@ services:
 
   db:
     image: postgres:10
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    container_name: portfolio_db
     restart: always
     ports:
       - "5432:5432"
@@ -18,8 +15,10 @@ services:
     image: "redis:alpine"
 
   web:
+    image: avaaren/portfolio:part1
     build: ./backend
-    command: bash -c "while !</dev/tcp/portfolioproject_db_1/5432; do sleep 3; done; python /app/backend/portfolio/manage.py migrate --noinput && python /app/backend/portfolio/manage.py runserver 0.0.0.0:8000"
+    # while !</dev/tcp/portfolio_db/5432; do sleep 3; done; 
+    command: bash -c "python /app/backend/portfolio/manage.py makemigrations && python /app/backend/portfolio/manage.py migrate --run-syncdb && python /app/backend/portfolio/manage.py runserver 0.0.0.0:8000"
     restart: always
     volumes:
       - ./backend:/app/backend
@@ -31,21 +30,40 @@ services:
 
   celery:
     build: ./backend
-    command: celery -A portfolio worker -l info
+    command: bash -c "echo 'lool' && sleep 3 && celery -A portfolio worker -l info"
+    restart: always
     volumes:
       - ./backend:/app/backend
     depends_on:
+      - web
       - db
       - redis
 
   celery-beat:
     build: ./backend
-    command: celery -A portfolio beat -l info
+    command: bash -c "echo 'lool' && sleep 3 && celery -A portfolio beat -l info"
+    restart: always
     volumes:
       - ./backend:/app/backend
     depends_on:
+      - web
       - db
       - redis
 
+  frontend:
+    build: ./frontend/portfolio
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend/portfolio:/app/frontend/portfolio
+      - node-modules:/app/frontend/portfolio/node_modules
+    ports:
+      - "3000:3000"
+    stdin_open: true
+  flower:  
+    image: mher/flower
+    command: ["flower", "--broker=redis://redis:6379/0", "--port=8888"]  
+    ports:  
+      - 8888:8888
 volumes:
   postgres:
+  node-modules:
