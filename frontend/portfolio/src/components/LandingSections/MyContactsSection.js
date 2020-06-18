@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import LandingCarousel from '../LandingCarousel'
 
 const image_path = [
-    ["http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",''],
-    ["http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",''],
-    ["http://127.0.0.1:8000/media/projects/795cba98-b095-47f6-8313-0dec3f1b18cd.jpeg",''],
+    [require("../../img/social-icons/git.svg"),''],
+   [require("../../img/social-icons/hh.png"),''],
+    [require("../../img/social-icons/linkedin.png"),''],
+    [require("../../img/social-icons/tg.png"),''],
+    [require("../../img/social-icons/vk.png"),''],
 ]
 
 export default class MyResumeSection extends Component {
