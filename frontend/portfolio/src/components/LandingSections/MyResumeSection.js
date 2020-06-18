@@ -3,12 +3,12 @@ import SliderDownComponent from '../SliderDownComponent'
 import LandingCarousel from '../LandingCarousel'
 
 const image_path = [
-    require("../../img/technologies/django.jpg"),
-    require("../../img/technologies/python.jpg"),
-    require("../../img/technologies/react.png"),
-    require("../../img/technologies/js.png"),
-    require("../../img/technologies/html.jpg"),
-    require("../../img/technologies/drf.png"),
+    [require("../../img/technologies/django.jpg"),''],
+    [require("../../img/technologies/python.jpg"),''],
+    [require("../../img/technologies/react.png"),''],
+    [require("../../img/technologies/js.png"),''],
+    [require("../../img/technologies/html.jpg"),''],
+    [require("../../img/technologies/drf.png"),''],
 
 ]
 export default class MyResumeSection extends Component {
