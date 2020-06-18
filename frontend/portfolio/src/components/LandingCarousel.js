@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 
 export default class Carousel extends Component {
     render (){
-        const {image_path, html_id, description} = this.props;
+        const {image_path, html_id} = this.props;
         return (
             <div className="carousel-wrapper">
                 <div className="carousel slide" id={html_id} data-ride="carousel">
                 <CarouselIndicators dataTarget={html_id} length={image_path.length}/>
-                <CarouselInner image_path={image_path} html_id={html_id} description={description}/>
+                <CarouselInner image_path={image_path} html_id={html_id}/>
             </div>
             </div>
 
@@ -34,9 +34,9 @@ class CarouselIndicators extends Component {
 
 class CarouselInner extends Component {
     render (){
-        const {image_path, html_id, description} = this.props;
+        const {image_path, html_id} = this.props;
         const carouselItemsList = image_path.map( (image, index) => 
-            <CarouselItem key={index} id={index} projectImage={image} projectName={description} />
+            <CarouselItem key={index} id={index} projectImage={image[0]} projectName={image[1]} />
         );
         return(
             <div className="carousel-inner">
