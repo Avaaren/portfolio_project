@@ -28,7 +28,8 @@ export default class AboutProjectSection extends Component {
 
     render() {
         image_path = this.state.projects.map( (project) => 
-            BASE_SERVER_URL+project.images[0].image
+            [BASE_SERVER_URL+project.images[0].image,
+            project.description]
         );
         return (
             <div className="container" id="my-projects-link">
