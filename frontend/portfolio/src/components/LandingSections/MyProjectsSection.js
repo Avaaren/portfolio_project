@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PortfolioService from '../../services/PortfolioService'
 import SliderDownComponent from '../SliderDownComponent'
-import LandingCarousel2 from '../LandingCarousel2'
+import LandingCarousel from '../LandingCarousel'
 
-
+const BASE_SERVER_URL = 'http://127.0.0.1:8000'
 const projectsService = new PortfolioService()
 let image_path = []
 
@@ -28,7 +28,7 @@ export default class AboutProjectSection extends Component {
 
     render() {
         image_path = this.state.projects.map( (project) => 
-            'http://127.0.0.1:8000'+project.images[0].image
+            BASE_SERVER_URL+project.images[0].image
         );
         return (
             <div className="container" id="my-projects-link">
@@ -38,7 +38,7 @@ export default class AboutProjectSection extends Component {
                             <h2 className="my-4">Мои проекты</h2>
                             <h3>В данном разделе представлены мои лучшие проекты. Данные берутся
                             из БД, поэтому их можно дополнять и редактировать по усмотрению автора.</h3>
-                            <LandingCarousel2 image_path={image_path} html_id='projects-carousel'/>
+                            <LandingCarousel image_path={image_path} html_id='projects-carousel'/>
                             <SliderDownComponent />
                         </section>
                     </div>
