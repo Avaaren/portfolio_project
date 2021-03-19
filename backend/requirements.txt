@@ -8,7 +8,7 @@ chardet==3.0.4
 Django==3.0.6
 django-cors-headers==3.3.0
 django-filter==2.2.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 flower==0.9.4
 humanize==0.5.1
 idna==2.9
